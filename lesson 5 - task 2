@@ -1,0 +1,10 @@
+def count_my_file():
+    with open("text_1.txt", "r", encoding='utf8') as text_1:
+        data = text_1.read().split()
+        print(f"Содержимое файла: {data}")
+        print(f'Кол-во строк в файле: {len(data)}')
+        for elem in data:
+            print(f'Кол-во символов в строке: {len(elem)}')
+        return
+print(count_my_file())
+
