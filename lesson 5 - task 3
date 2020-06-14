@@ -1,0 +1,13 @@
+def avg_salary():
+    with open("text_3.txt", "r", encoding='utf8') as text_3:
+        list = text_3.read().split()
+        staff = list[::2]
+        salary = list[1::2]
+        dic = dict(zip(staff, salary))
+        print(f'Зарплаты сотрудников: {dic}')
+        for key, val in dic.items():
+            if float(val) < 20000:
+                print(f'Позорный столб: {key}')
+        return
+print(avg_salary())
+
