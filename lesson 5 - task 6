@@ -1,0 +1,23 @@
+import re
+def file2dict():
+    with open("text_6.txt", "r", encoding='utf8') as text_6:
+        data = text_6.readlines()
+        klass = []
+        chasi = []
+        x = []
+        c = []
+        for el in data:
+            klass.append((el.split(":")[0].strip()))
+            x.append((el.split(":")[1].strip()))
+            for a in x:
+                b = re.findall(r'\d+', a)
+                c.append(b)
+        d = c[-(len(klass)):]
+        for e in d:
+            for i in e:
+                e = [int(i) for i in e]
+            chasi.append(sum(e))
+            print(chasi)
+    dic = dict(zip(klass, chasi))
+    return print(dic)
+print(file2dict())
