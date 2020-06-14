@@ -1,0 +1,13 @@
+def write_new_file():
+    with open("my_file1.txt", "w+", encoding='utf8') as my_file1:
+        while True:
+            x = input("Здесь пользователь вводит данные, которые хочет перенести в новый файл: ")
+            for elem in x.split():
+                my_file1 = open("my_file1.txt", "a+")
+                my_file1.write(f"{elem}\n")
+            if x == "":
+                break
+        return
+print(write_new_file())
+with open("my_file1.txt", 'r') as my_file1:
+    print(my_file1.read())
