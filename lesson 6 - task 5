@@ -1,0 +1,32 @@
+class Stationery:
+    def __init__(self, title="instrument"):
+        self.title = title
+    def draw(self):
+        print(f"Запуск отрисовки.")
+
+class Pencil(Stationery):
+    def draw(self):
+        print(f"start drawing with {self.title} pencil!")
+
+class Pen(Stationery):
+    def draw(self):
+        print(f"start drawing with {self.title} pen!")
+
+class Handle(Stationery):
+    def draw(self):
+        print(f"start drawing with {self.title} paint!"
+
+stationery = Stationery()
+stationery.draw()
+
+pen = Pen("Ручка шариковая")
+pen.draw()
+
+pencil = Pencil("HB")
+pencil.draw
+
+marker = Handle("CD pen")
+marker.draw()
+
+
+
