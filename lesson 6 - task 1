@@ -1,0 +1,24 @@
+from time import sleep
+class TrafficLight:
+    def __init__(self, color):
+        self.__color = color
+    def running(self):
+        i = 0
+        for i in range(0, 180):
+            print(g.__color)
+            sleep(7)
+            print(y.__color)
+            sleep(2)
+            print(r.__color)
+            sleep(7)
+            print(y.__color)
+            sleep(2)
+            i += 1
+
+
+g = TrafficLight("green")
+r = TrafficLight("red")
+y = TrafficLight("yellow")
+TL = TrafficLight("yellow")
+TL.running()
+
