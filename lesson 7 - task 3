@@ -1,0 +1,31 @@
+
+
+class Matrix:
+
+    def __init__(self, lists):
+        self.lists = lists
+
+    def __str__(self):
+        return '\n'.join('\t'.join([str(itm) for itm in line]) for line in self.lists)
+
+    def __add__(self, other):
+        try:
+            m = [[int(self.lists[line][itm]) + int(other.lists[line][itm]) for itm in range(len(self.lists[line]))]
+                 for line in range(len(self.lists))]
+            return Matrix(m)
+        except IndexError:
+            return f'Ошибка размерностей матриц'
+
+lists1 = [[1, 9, 9, 3], [-2, 4, 6, 0], [-7, 17, 3, 1]]
+lists2 = [[3, 4, 5, 6], [1, 3, 4, 9],[18, -5, 9, 12]]
+
+matrix1 = Matrix(lists1)
+matrix2 = Matrix(lists2)
+
+print(matrix1)
+print('____________________')
+print(matrix2)
+print('____________________')
+print(matrix1 + matrix2)
+print('____________________')
+
