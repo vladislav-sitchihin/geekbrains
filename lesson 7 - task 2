@@ -1,0 +1,26 @@
+from abc import ABC, abstractmethod
+
+class odezhda(ABC):
+    def __init__(self, param):
+        self.param = param
+
+    @abstractmethod
+    def rashod(self):
+        pass
+
+class paljto(odezhda):
+    @property
+    def rashod(self):
+        return f'\n Расход ткани для пошива пальто размером {self.param} составляет {round(self.param / 6.5) + 0.5} м2'
+
+class kostjum(odezhda):
+    @property
+    def rashod(self):
+        return f'\n Расход ткани для пошива костюма на рост {self.param} м составляет {2 * self.param + 0.3} м2'
+
+P = paljto(56)
+K = kostjum(1.80)
+
+print(P.rashod + K.rashod)
+
+
